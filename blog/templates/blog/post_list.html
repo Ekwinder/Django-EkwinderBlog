@@ -1,26 +1,18 @@
 <html>
 	<head>
-	 <title>Django	Girls	blog</title>
+	 <title>Ekwinder's Blog</title>
 	</head>
 	<body>
 		<div>
 			<h1><a	href="">Ekwinder's Blog </a></h1>
 		</div>
+		{% for post in posts %}
 		<div>
-			<p>published: 14.06.2014, 12:14</p>
-			<h2><a	href="">My first post</a></h2>
-			<p>This is my first post which i have posted
-				in this blog. I hope you like it as much 
-				as I do.
-			</p>
+			<p>published: {{post.published_date}}</p>
+			<h1><a href="">{{post.title}}</a></h1>
+			<p>{{post.text|linebreaks}}</p>
 		</div>
-		<div>
-			<p>published: 14.06.2014, 12:14</p>
-			<h2><a	href="">My second post</a></h2>
-			<p>This is my Second post which i have posted
-				in this blog. This is by far the best post
-				I have ever writtern
-			</p>
-		</div>
+		{% endfor %}
+		
 	</body>
 </html>
